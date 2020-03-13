@@ -16,12 +16,31 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'EspiarGratis',
+  siteName: 'Jamdocs',
   siteUrl: 'https://jamdocs.netlify.com',
   templates: {
     Doc: '/:slug',
   },
   plugins: [
+        {
+        use: 'gridsome-plugin-pwa',
+        options: {
+            title: 'Gridsome',
+            startUrl: '/',
+            display: 'standalone',
+            statusBarStyle: 'default',
+            manifestPath: 'manifest.json',
+            disableServiceWorker: true,
+            serviceWorkerPath: 'sw.js',
+            cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+            shortName: 'Gridsome',
+            themeColor: '#666600',
+            backgroundColor: '#ffffff',
+            icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+            msTileImage: '',
+            msTileColor: '#666600'
+        }
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
